@@ -1,32 +1,36 @@
+require_relative 'lock.rb'
+
 class Diary
 
   attr_reader :entries
 
-  def initialize(locked = true)
-    @locked = locked
+  def initialize
+    @lock = Lock.new
     @entries = []
   end
 
   def locked?
-    @locked
+    @lock.locked?
+  end
+
+  def lock
+    @lock.lock
+  end
+
+  def unlock
+    @lock.unlock
   end
 
   def add_entry(entry)
-    raise 'Diary is locked' if @locked
+    raise 'Diary is locked' if locked?
     @entries << entry
   end
 
   def get_entries
-    raise 'Diary is locked' if @locked
+    raise 'Diary is locked' if locked?
     @entries
   end
 
-  def lock
-    @locked = true
-  end
 
-  def unlock
-    @locked = false
-  end
 
 end
