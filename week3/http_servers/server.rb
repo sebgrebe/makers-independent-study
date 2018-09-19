@@ -2,7 +2,6 @@ require 'socket'
 
 def run_server
   server = TCPServer.new(2345)
-  i = 0
   loop do #put into a loop so that server is reopened after a request and can receive another request
     socket = server.accept #code only goes beyond this line if server gets a new request through hitting localhost:2345
     request = get_lines_until_blank_line(socket)
