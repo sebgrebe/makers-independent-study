@@ -5,22 +5,22 @@ public class timing {
   public static void main(String[] args) {
 
     List<Integer> arrayList = createList(100000);
-    int rounds = 1000000;
+    int rounds = 1000;
 
     //get time for getting last element of array
-    double diff = testGetLast(arrayList, rounds);
+    double diff = testGetLast(arrayList, 1000000);
     printTestResult(diff, "get last element of an array");
 
     //get time for reversing array
-    diff = testReverse(arrayList, 1000);
+    diff = testReverse(arrayList, rounds);
     printTestResult(diff, "reverse array");
 
     //get time for shuffling
-    diff = testShuffle(arrayList, 1000);
+    diff = testShuffle(arrayList, rounds);
     printTestResult(diff, "shuffle array");
 
     //get time for sorting
-    diff = testShuffle(arrayList, 1000);
+    diff = testSort(arrayList, rounds);
     printTestResult(diff, "sort array");
   }
 
