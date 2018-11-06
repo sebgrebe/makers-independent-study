@@ -6,7 +6,7 @@ public class Timing extends myMethods {
   public static void main(String[] args) {
     int size = 1000000;
     ArrayList<Integer> arrayList = createList(size);
-    int rounds = 10;
+    int rounds = 1000;
 
     Function<ArrayList, Void> getLast = testArrayList -> {
       testArrayList.get(testArrayList.size() - 1);
@@ -20,6 +20,11 @@ public class Timing extends myMethods {
 
     Function<ArrayList, Void> shuffle = testArrayList -> {
       Collections.shuffle(testArrayList);
+      return null;
+    };
+
+    Function <ArrayList, Void> sort = testArrayList -> {
+      Collections.sort(testArrayList);
       return null;
     };
 
@@ -37,7 +42,7 @@ public class Timing extends myMethods {
     // diff = testMyReverse(arrayList, rounds);
     // printTestResult(diff, "reverse array with my method", size);
 
-    get time for shuffling
+    // get time for shuffling
     diff = test(arrayList, rounds, shuffle);
     printTestResult(diff, "shuffle array", size);
 
@@ -45,9 +50,9 @@ public class Timing extends myMethods {
     // diff = testMyShuffle(arrayList, rounds);
     // printTestResult(diff, "shuffle array with my method", size);
 
-    //get time for sorting
-    // diff = testSort(arrayList, rounds);
-    // printTestResult(diff, "sort array", size);
+    // get time for sorting
+    diff = test(arrayList, rounds, sort);
+    printTestResult(diff, "sort array", size);
   }
 
   public static void printTestResult(double result, String operation, int size) {
@@ -73,30 +78,9 @@ public class Timing extends myMethods {
       Object last = method.apply(testArrayList);
     }
     endTime = System.currentTimeMillis();
+    System.out.println("start time " + startTime);
+    System.out.println("end time " + endTime);
     double diff = (endTime - startTime) / rounds ;
-    return diff;
-  }
-
-  public static double testShuffle(List testArrayList, int rounds) {
-    double endTime = 0;
-    double startTime = System.currentTimeMillis();
-    for (int j=0; j < rounds; j++) {
-      Collections.shuffle(testArrayList);
-    }
-    endTime = System.currentTimeMillis();
-    double diff = (endTime - startTime) / rounds;
-    return diff;
-  }
-
-  public static double testSort(List testArrayList, int rounds) {
-    double endTime = 0;
-    double startTime = System.currentTimeMillis();
-    Collections.shuffle(testArrayList);
-    for (int j=0; j < rounds; j++) {
-      Collections.sort(testArrayList);
-    }
-    endTime = System.currentTimeMillis();
-    double diff = (endTime - startTime) / rounds;
     return diff;
   }
 
