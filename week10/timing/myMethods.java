@@ -41,5 +41,19 @@ public class myMethods {
     return shuffledList;
   }
 
+  public static double testMyShuffle(List testArrayList, int rounds) {
+    System.out.println("rounds: " + rounds);
+    double endTime = 0;
+    Collections.shuffle(testArrayList);
+    double startTime = System.currentTimeMillis();
+    for (int j=0; j < rounds; j++) {
+      myShuffle(testArrayList);
+    }
+    endTime = System.currentTimeMillis();
+    System.out.println(endTime - startTime);
+    double diff = (endTime - startTime) / rounds;
+    return diff;
+  }
+
 
 }
