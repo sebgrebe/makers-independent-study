@@ -2,6 +2,7 @@ import java.util.*;
 
 public class myMethods {
   public static double testMyReverse(List testArrayList, int rounds) {
+    Collections.shuffle(testArrayList);
     double endTime = 0;
     double startTime = System.currentTimeMillis();
     for (int j=0; j < rounds; j++) {
@@ -10,20 +11,6 @@ public class myMethods {
     endTime = System.currentTimeMillis();
     double diff = (endTime - startTime) / rounds;
     return diff;
-  }
-
-  public static List<Integer> myReverse(List<Integer> testArrayList) {
-    Collections.shuffle(testArrayList);
-    int size = testArrayList.size();
-    List<Integer> reversedList = new ArrayList<Integer>(size);
-    for (int j=size; j > 0; j--){
-      reversedList.add(0);
-    }
-    for (int i=0; i < (size /2); i++) {
-      reversedList.set(i, testArrayList.get(size - (i + 1)));
-      reversedList.set(size - (i + 1), testArrayList.get(i));
-    }
-    return reversedList;
   }
 
   public static List<Integer> myShuffle(List<Integer> testArrayList) {
