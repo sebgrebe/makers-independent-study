@@ -5,20 +5,20 @@ public class myMethods {
   public static void main(String[] args) {
 
     ArrayList<Integer> list_random = new ArrayList<Integer>();
-    int list_size = 1000;
+    int list_size = 100;
     for (int i=0; i < list_size; i++) {
         Random random = new Random();
         list_random.add(random.nextInt(list_size));
     }
-    // ArrayList<Integer> list = new ArrayList<Integer>();
-    // list.add(7);
-    // list.add(3);
-    // list.add(8);
-    // list.add(1);
-    // list.add(5);
-    // list.add(0);
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    list.add(7);
+    list.add(3);
+    list.add(8);
+    list.add(1);
+    list.add(5);
+    list.add(0);
 
-    ArrayList<Integer> mySorted = myCleverSort(list_random);
+    ArrayList<Integer> mySorted = myClevererSort(list_random);
 
     System.out.println(mySorted);
     System.out.println(mySorted.size());
@@ -59,6 +59,25 @@ public class myMethods {
       }
     }
     return list;
+  }
+
+  public static ArrayList<Integer> myClevererSort(ArrayList<Integer> list) {
+    ArrayList<Integer> sorted = new ArrayList<Integer>();
+    sorted.add(list.get(0));
+    for (int i = 1; i < list.size(); i++) {
+      int comp = list.get(i);
+      for (int j=sorted.size(); j > 0; j--) {
+        if (comp > sorted.get(j-1)) {
+          sorted.add(j,comp);
+          break;
+        }
+        if (comp <= sorted.get(j-1) && j == 1) {
+          sorted.add(j-1,comp);
+          break;
+        }
+      }
+    }
+    return sorted;
   }
 
 

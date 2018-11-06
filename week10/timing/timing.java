@@ -69,7 +69,7 @@ public class Timing {
       return sorted;
     };
 
-    Function <ArrayList<Integer>, Object> myClevererSort = testArrayList -> {
+    Function <ArrayList<Integer>, Object> myCleverSort = testArrayList -> {
       for (int i = 1; i < testArrayList.size(); i++) {
         int comp = testArrayList.get(i);
         for (int j=(i-1); j > -1; j--) {
@@ -86,6 +86,25 @@ public class Timing {
         }
       }
       return testArrayList;
+    };
+
+    Function <ArrayList<Integer>, Object> myClevererSort = testArrayList -> {
+      ArrayList<Integer> sorted = new ArrayList<Integer>();
+      sorted.add(testArrayList.get(0));
+      for (int i = 1; i < testArrayList.size(); i++) {
+        int comp = testArrayList.get(i);
+        for (int j=sorted.size(); j > 0; j--) {
+          if (comp > sorted.get(j-1)) {
+            sorted.add(j,comp);
+            break;
+          }
+          if (comp <= sorted.get(j-1) && j == 1) {
+            sorted.add(j-1,comp);
+            break;
+          }
+        }
+      }
+      return sorted;
     };
 
     //get time for getting last element of array
@@ -116,6 +135,10 @@ public class Timing {
     // get time for my sorting
     // diff = test(arrayList, rounds, mySort);
     // printTestResult(diff, "sort array with my method", size);
+
+    // get time for my clever sorting
+    // diff = test(arrayList, rounds, myCleverSort);
+    // printTestResult(diff, "sort array with my clever method", size);
 
     // get time for my cleverer sorting
     diff = test(arrayList, rounds, myClevererSort);
