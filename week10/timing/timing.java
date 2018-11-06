@@ -18,6 +18,12 @@ public class Timing extends myMethods {
       return null;
     };
 
+    Function<ArrayList, Void> shuffle = testArrayList -> {
+      Collections.shuffle(testArrayList);
+      return null;
+    };
+
+
     //get time for getting last element of array
     double diff;
     diff = test(arrayList, 1000000, getLast);
@@ -31,9 +37,9 @@ public class Timing extends myMethods {
     // diff = testMyReverse(arrayList, rounds);
     // printTestResult(diff, "reverse array with my method", size);
 
-    //get time for shuffling
-    // diff = testShuffle(arrayList, rounds);
-    // printTestResult(diff, "shuffle array", size);
+    get time for shuffling
+    diff = test(arrayList, rounds, shuffle);
+    printTestResult(diff, "shuffle array", size);
 
     // get time for my shuffling
     // diff = testMyShuffle(arrayList, rounds);
