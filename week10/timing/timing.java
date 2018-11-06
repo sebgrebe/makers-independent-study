@@ -53,38 +53,80 @@ public class Timing {
       return shuffledList;
     };
 
+    Function <ArrayList<Integer>, Object> mySort = testArrayList -> {
+      int list_size = testArrayList.size();
+      ArrayList<Integer> sorted = new ArrayList<Integer>();
+      for (int i=0; i < list_size; i++) {
+        int min = testArrayList.get(0);
+        for (int j=0; j < testArrayList.size(); j++) {
+          if (min > testArrayList.get(j)) {
+            min = testArrayList.get(j);
+          }
+        }
+        testArrayList.remove(Integer.valueOf(min));
+        sorted.add(min);
+      }
+      return sorted;
+    };
+
+    Function <ArrayList<Integer>, Object> myClevererSort = testArrayList -> {
+      for (int i = 1; i < testArrayList.size(); i++) {
+        int comp = testArrayList.get(i);
+        for (int j=(i-1); j > -1; j--) {
+          if (comp > testArrayList.get(j)) {
+            testArrayList.remove(i);
+            testArrayList.add(j+1,comp);
+            break;
+          }
+          if (comp <= testArrayList.get(j) && j == 0) {
+            testArrayList.remove(i);
+            testArrayList.add(j,comp);
+            break;
+          }
+        }
+      }
+      return testArrayList;
+    };
 
     //get time for getting last element of array
     double diff;
-    diff = test(arrayList, 1000000, getLast);
-    printTestResult(diff, "get last element of an array", size);
-
-    // get time for reversing array
-    diff = test(arrayList, rounds, reverse);
-    printTestResult(diff, "reverse array", size);
-
-    //get time for my reversing method
-    diff = test(arrayList, rounds, myReverse);
-    printTestResult(diff, "reverse array with my method", size);
+    // diff = test(arrayList, 1000000, getLast);
+    // printTestResult(diff, "get last element of an array", size);
     //
-    // get time for shuffling
-    diff = test(arrayList, rounds, shuffle);
-    printTestResult(diff, "shuffle array", size);
+    // // get time for reversing array
+    // diff = test(arrayList, rounds, reverse);
+    // printTestResult(diff, "reverse array", size);
+    //
+    // //get time for my reversing method
+    // diff = test(arrayList, rounds, myReverse);
+    // printTestResult(diff, "reverse array with my method", size);
+    // //
+    // // get time for shuffling
+    // diff = test(arrayList, rounds, shuffle);
+    // printTestResult(diff, "shuffle array", size);
+    //
+    // // get time for my shuffling
+    // diff = test(arrayList, rounds, myShuffle);
+    // printTestResult(diff, "shuffle array with my method", size);
+    //
+    // // get time for sorting
+    // diff = test(arrayList, rounds, sort);
+    // printTestResult(diff, "sort array", size);
 
-    // get time for my shuffling
-    diff = test(arrayList, rounds, myShuffle);
-    printTestResult(diff, "shuffle array with my method", size);
+    // get time for my sorting
+    // diff = test(arrayList, rounds, mySort);
+    // printTestResult(diff, "sort array with my method", size);
 
-    // get time for sorting
-    diff = test(arrayList, rounds, sort);
-    printTestResult(diff, "sort array", size);
+    // get time for my cleverer sorting
+    diff = test(arrayList, rounds, myClevererSort);
+    printTestResult(diff, "sort array with my clever method", size);
   }
 
   public static void printTestResult(double result, String operation, int size) {
     System.out.println("It takes \n\t"
       + (result / 1_000_000) + " ms\nto "
       + operation
-      + " with an array of size " + size
+      + ", where array size is: " + size
     );
   }
 

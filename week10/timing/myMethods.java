@@ -1,46 +1,66 @@
 import java.util.*;
 
 public class myMethods {
-  public static double testMyReverse(List testArrayList, int rounds) {
-    Collections.shuffle(testArrayList);
-    double endTime = 0;
-    double startTime = System.currentTimeMillis();
-    for (int j=0; j < rounds; j++) {
-      myReverse(testArrayList);
+
+  public static void main(String[] args) {
+
+    ArrayList<Integer> list_random = new ArrayList<Integer>();
+    int list_size = 1000;
+    for (int i=0; i < list_size; i++) {
+        Random random = new Random();
+        list_random.add(random.nextInt(list_size));
     }
-    endTime = System.currentTimeMillis();
-    double diff = (endTime - startTime) / rounds;
-    return diff;
+    // ArrayList<Integer> list = new ArrayList<Integer>();
+    // list.add(7);
+    // list.add(3);
+    // list.add(8);
+    // list.add(1);
+    // list.add(5);
+    // list.add(0);
+
+    ArrayList<Integer> mySorted = myCleverSort(list_random);
+
+    System.out.println(mySorted);
+    System.out.println(mySorted.size());
+
   }
 
-  public static List<Integer> myShuffle(List<Integer> testArrayList) {
-    int original_size = testArrayList.size();
-    int current_size = original_size;
-    List<Integer> shuffledList = new ArrayList<Integer>(original_size);
-    for (int i=0; i < original_size; i++) {
-      Random random = new Random();
-      Object found = testArrayList.get(random.nextInt(current_size));
-      int foundInteger = (int) found;
-      shuffledList.add(foundInteger);
-      testArrayList.remove(found);
-      current_size--;
+  public static ArrayList<Integer> mySort(ArrayList<Integer> list) {
+    int size = list.size();
+    ArrayList<Integer> sorted = new ArrayList<Integer>();
+    for (int i=0; i < size; i++) {
+      System.out.println(list);
+      int min = list.get(0);
+      for (int j=0; j < list.size(); j++) {
+        if (min > list.get(j)) {
+          min = list.get(j);
+        }
+      }
+      list.remove(Integer.valueOf(min));
+      sorted.add(min);
     }
-    return shuffledList;
+    return sorted;
   }
 
-  public static double testMyShuffle(List testArrayList, int rounds) {
-    System.out.println("rounds: " + rounds);
-    double endTime = 0;
-    Collections.shuffle(testArrayList);
-    double startTime = System.currentTimeMillis();
-    for (int j=0; j < rounds; j++) {
-      myShuffle(testArrayList);
+  public static ArrayList<Integer> myCleverSort(ArrayList<Integer> list) {
+    for (int i = 1; i < list.size(); i++) {
+      int comp = list.get(i);
+      for (int j=(i-1); j > -1; j--) {
+        if (comp > list.get(j)) {
+          list.remove(i);
+          list.add(j+1,comp);
+          break;
+        }
+        if (comp <= list.get(j) && j == 0) {
+          list.remove(i);
+          list.add(j,comp);
+          break;
+        }
+      }
     }
-    endTime = System.currentTimeMillis();
-    System.out.println(endTime - startTime);
-    double diff = (endTime - startTime) / rounds;
-    return diff;
+    return list;
   }
+
 
 
 }
