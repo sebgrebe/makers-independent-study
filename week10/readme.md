@@ -1,7 +1,7 @@
 ## Benchmark tests for different Java methods
 
 Folder structure:
-- myAlgorithms: contains all algorithms I have written for this project week
+- myAlgorithms: contains all algorithms I have written for this project week and tests for these.
 - timing: contains the benchmark testing for those methods. I've written my own testing method for this.
 
 ### Array methods
