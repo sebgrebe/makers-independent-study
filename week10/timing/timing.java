@@ -6,8 +6,11 @@ public class Timing {
   public static void main(String[] args) {
     int size = Integer.parseInt(args[0]);
     ArrayList<Integer> arrayList = createList(size);
+    ArrayList<String> stringList = createStringList(size);
     int rounds = 100;
+    double diff;
 
+    //Functions
     Function<ArrayList<Integer>, Object> getLast = testArrayList -> {
       return testArrayList.get(testArrayList.size() - 1);
     };
@@ -107,8 +110,25 @@ public class Timing {
       return sorted;
     };
 
+    Function <ArrayList<String>, Object> myDuplicate = testArrayList -> {
+      ArrayList<String> newWords = new ArrayList<String>();
+      ArrayList<String> duplicates = new ArrayList<String>();
+      for (int i=0; i < testArrayList.size(); i++) {
+          String nextWord = testArrayList.get(i);
+          int sizeFoundWords = newWords.size();
+          Boolean found = false;
+          if (newWords.contains(nextWord) && !duplicates.contains(nextWord)) {
+              duplicates.add(nextWord);
+          }
+          else if (!newWords.contains(nextWord)) {
+              newWords.add(nextWord);
+          }
+      }
+      return duplicates;
+    };
+
     //get time for getting last element of array
-    double diff;
+
     // diff = test(arrayList, 1000000, getLast);
     // printTestResult(diff, "get last element of an array", size);
     //
@@ -141,8 +161,13 @@ public class Timing {
     // printTestResult(diff, "sort array with my clever method", size);
 
     // get time for my cleverer sorting
-    diff = test(arrayList, rounds, myClevererSort);
-    printTestResult(diff, "sort array with my clever method", size);
+    // diff = test(arrayList, rounds, myClevererSort);
+    // printTestResult(diff, "sort array with my clever method", size);
+
+    // get time for myDuplicate
+    diff = testStrings(stringList, rounds, myDuplicate);
+    printTestResult(diff, "find duplicates with my method", size);
+
   }
 
   public static void printTestResult(double result, String operation, int size) {
@@ -161,7 +186,44 @@ public class Timing {
     return arrayList;
   }
 
-  public static double test(ArrayList testArrayList, int rounds, Function<ArrayList<Integer>, Object> method) {
+  public static ArrayList<String> createStringList(int size) {
+    ArrayList<String> stringList = new ArrayList<String>();
+    for (int i=0; i < size/10; i++) {
+      ArrayList<String> pool = new ArrayList<String>(10);
+      pool.add("This");
+      pool.add("is");
+      pool.add("pool");
+      pool.add("ambience");
+      pool.add("words");
+      pool.add("words");
+      pool.add("twice");
+      pool.add("Superkalafristik");
+      pool.add("words");
+      pool.add("is");
+      for (int j =0; j < 10; j++) {
+        Random random = new Random();
+        String word = pool.get(random.nextInt(pool.size()));
+        stringList.add(word);
+        pool.remove(word);
+      }
+    }
+    return stringList;
+  }
+
+  public static double test(ArrayList testArrayList, int rounds, Function<ArrayList<Object>, Object> method) {
+    double endTime = 0;
+    double startTime = System.nanoTime();
+    for (int i = 0; i < rounds; i++) {
+      Object last = method.apply(testArrayList);
+    }
+    endTime = System.nanoTime();
+    System.out.println("start time " + startTime);
+    System.out.println("end time " + endTime);
+    double diff = (endTime - startTime) / rounds ;
+    return diff;
+  }
+
+  public static double testStrings(ArrayList testArrayList, int rounds, Function<ArrayList<String>, Object> method) {
     double endTime = 0;
     double startTime = System.nanoTime();
     for (int i = 0; i < rounds; i++) {
