@@ -5,8 +5,9 @@ public class Timing {
 
   public static void main(String[] args) {
     int size = Integer.parseInt(args[0]);
+    CreateLists createList = new CreateLists();
     ArrayList<Integer> arrayList = createList(size);
-    ArrayList<String> stringList = createStringList(size);
+    ArrayList<String> stringList = createList.createStringList(size);
     int rounds = 100;
     double diff;
 
@@ -144,6 +145,45 @@ public class Timing {
       return duplicates;
     };
 
+    Function <ArrayList<String>, Object> myFrequency = testArrayList -> {
+      ArrayList<ArrayList<String>> groupedList = new ArrayList<ArrayList<String>>();
+      for (int i=0; i<testArrayList.size(); i++) {
+        String word = testArrayList.get(i);
+        Boolean found = false;
+        for (int j=0; j<groupedList.size(); j++) {
+          if (word == groupedList.get(j).get(0)) {
+            ArrayList<String> incrementedGroup = groupedList.get(j);
+            incrementedGroup.add(word);
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          ArrayList<String> newGroup = new ArrayList<String>();
+          newGroup.add(word);
+          groupedList.add(newGroup);
+        }
+      }
+      ArrayList<ArrayList> sortedList = new ArrayList<ArrayList>();
+      int listSize = groupedList.size();
+      for (int k=0; k<listSize; k++) {
+        ArrayList<String> maxGroup = groupedList.get(0);
+        for (int l=0; l<groupedList.size(); l++) {
+          if (maxGroup.size() < groupedList.get(l).size()){
+            maxGroup = groupedList.get(l);
+          }
+        }
+        sortedList.add(maxGroup);
+        groupedList.remove(maxGroup);
+      }
+      ArrayList<String> mostFrequent = new ArrayList<String>();
+      for (int m=0; m<sortedList.size() && m < 10; m++) {
+        String frequentWord = (String) sortedList.get(m).get(0);
+        mostFrequent.add(frequentWord);
+      }
+      return mostFrequent;
+    };
+
     //get time for getting last element of array
 
     // diff = test(arrayList, 1000000, getLast);
@@ -186,8 +226,12 @@ public class Timing {
 //    printTestResult(diff, "find duplicates with my method", size);
 
     // get time for myDuplicateWithHash
-    diff = testStrings(stringList, rounds, myDuplicateWithHash);
-    printTestResult(diff, "find duplicates with my hash method", size);
+//    diff = testStrings(stringList, rounds, myDuplicateWithHash);
+//    printTestResult(diff, "find duplicates with my hash method", size);
+
+    // get time for myFrequency
+    diff = testStrings(stringList, rounds, myFrequency);
+    printTestResult(diff, "find most common words with my array method", size);
 
   }
 
@@ -205,30 +249,6 @@ public class Timing {
       arrayList.add(i);
     }
     return arrayList;
-  }
-
-  public static ArrayList<String> createStringList(int size) {
-    ArrayList<String> stringList = new ArrayList<String>();
-    for (int i=0; i < size/10; i++) {
-      ArrayList<String> pool = new ArrayList<String>(10);
-      pool.add("This");
-      pool.add("is");
-      pool.add("pool");
-      pool.add("ambience");
-      pool.add("words");
-      pool.add("words");
-      pool.add("twice");
-      pool.add("Superkalafristik");
-      pool.add("words");
-      pool.add("is");
-      for (int j =0; j < 10; j++) {
-        Random random = new Random();
-        String word = pool.get(random.nextInt(pool.size()));
-        stringList.add(word);
-        pool.remove(word);
-      }
-    }
-    return stringList;
   }
 
   public static double test(ArrayList testArrayList, int rounds, Function<ArrayList<Object>, Object> method) {

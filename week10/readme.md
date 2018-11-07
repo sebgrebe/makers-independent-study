@@ -20,6 +20,6 @@ Results can be found [here](https://docs.google.com/spreadsheets/d/1M00Ww9iaW-4b
 
 Comparing hash and array methods for the following tasks:
 * Duplicate: Given a list of words, find all words that appear more than once.
-* Most frequent words: Given a text, find which are the ten most common words. 
+* Most frequent words: Given a text, find which are the ten most common words.
 
 [Results](https://docs.google.com/spreadsheets/d/1M00Ww9iaW-4b57Mz7hGL7ILT1yaOMRixbhGv9CjBdVY/edit#gid=772886254)

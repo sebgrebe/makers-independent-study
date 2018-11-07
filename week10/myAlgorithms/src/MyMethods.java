@@ -2,53 +2,6 @@ import java.util.*;
 
 public class MyMethods {
 
-    public static void main(String[] args) {
-
-        Grouping duplicateInstance = new Grouping();
-        System.out.println(duplicateInstance);
-
-        ArrayList<Integer> list_random = new ArrayList<Integer>();
-        int list_size = 100;
-        for (int i=0; i < list_size; i++) {
-            Random random = new Random();
-            list_random.add(random.nextInt(list_size));
-        }
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        list.add(7);
-        list.add(3);
-        list.add(8);
-        list.add(1);
-        list.add(5);
-        list.add(0);
-
-        ArrayList<String> stringList = new ArrayList<String>();
-        stringList.add("This");
-        stringList.add("text");
-        stringList.add("and");
-        stringList.add("text");
-        stringList.add("has");
-        stringList.add("unnecessary");
-        stringList.add("repitions");
-        stringList.add("It");
-        stringList.add("has");
-        stringList.add("them");
-        stringList.add("to");
-        stringList.add("test");
-        stringList.add("this");
-        stringList.add("algorithm");
-        stringList.add("for");
-        stringList.add("text");
-
-
-//        ArrayList<Integer> mySorted = myClevererSort(list_random);
-//
-//        System.out.println(mySorted);
-//        System.out.println(mySorted.size());
-
-            System.out.println(duplicateWithHash(stringList));
-
-    }
-
     public static ArrayList<Integer> mySort(ArrayList<Integer> list) {
         int size = list.size();
         ArrayList<Integer> sorted = new ArrayList<Integer>();
@@ -137,6 +90,45 @@ public class MyMethods {
             }
         }
         return duplicates;
+    }
+
+    public static ArrayList<String> frequency(ArrayList<String> list) {
+        ArrayList<ArrayList<String>> groupedList = new ArrayList<ArrayList<String>>();
+        for (int i=0; i<list.size(); i++) {
+            String word = list.get(i);
+            Boolean found = false;
+            for (int j=0; j<groupedList.size(); j++) {
+                if (word == groupedList.get(j).get(0)) {
+                    ArrayList<String> incrementedGroup = groupedList.get(j);
+                    incrementedGroup.add(word);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                ArrayList<String> newGroup = new ArrayList<String>();
+                newGroup.add(word);
+                groupedList.add(newGroup);
+            }
+        }
+        ArrayList<ArrayList> sortedList = new ArrayList<ArrayList>();
+        int listSize = groupedList.size();
+        for (int k=0; k<listSize; k++) {
+            ArrayList<String> maxGroup = groupedList.get(0);
+            for (int l=0; l<groupedList.size(); l++) {
+                if (maxGroup.size() < groupedList.get(l).size()){
+                    maxGroup = groupedList.get(l);
+                }
+            }
+            sortedList.add(maxGroup);
+            groupedList.remove(maxGroup);
+        }
+        ArrayList<String> mostFrequent = new ArrayList<String>();
+        for (int m=0; m<sortedList.size() && m < 10; m++) {
+            String frequentWord = (String) sortedList.get(m).get(0);
+            mostFrequent.add(frequentWord);
+        }
+        return mostFrequent;
     }
 
 

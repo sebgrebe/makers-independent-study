@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
 import org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -8,44 +10,27 @@ import static org.junit.Assert.assertEquals;
 
 public class myMethodsTest {
 
-    ArrayList<String> stringList = new ArrayList<String>();
+    CreateLists createLists = new CreateLists();
+    ArrayList<String> stringList = createLists.pool;
     ArrayList<String> stringList2 = new ArrayList<String>();
-    ArrayList<String> duplicates = new ArrayList<String>();
     MyMethods myMethods = new MyMethods();
 
     @Before
     public void beforeEachTest() {
-        stringList.add("This");
-        stringList.add("text");
-        stringList.add("and");
-        stringList.add("text");
-        stringList.add("has");
-        stringList.add("unnecessary");
-        stringList.add("repetitions");
-        stringList.add("It");
-        stringList.add("has");
-        stringList.add("them");
-        stringList.add("to");
-        stringList.add("test");
-        stringList.add("this");
-        stringList.add("algorithm");
-        stringList.add("for");
-        stringList.add("text");
 
         stringList2.add("this");
         stringList2.add("has");
         stringList2.add("no");
         stringList2.add("repetitions");
 
-        duplicates.add("text");
-        duplicates.add("has");
     }
 
     @Test
     public void testDuplicate(){
         System.out.println(myMethods.duplicate(stringList));
 
-        assertEquals(myMethods.duplicate(stringList), duplicates);
+        assertThat(myMethods.duplicate(stringList), hasItems("This"));
+        assertThat(myMethods.duplicate(stringList), not(hasItems("Superkalafristik")));
     }
 
     @Test
@@ -55,12 +40,21 @@ public class myMethodsTest {
 
     @Test
     public void testDuplicateWithHash(){
-        assertEquals(myMethods.duplicateWithHash(stringList), duplicates);
+        assertThat(myMethods.duplicateWithHash(stringList), hasItems("This"));
+        assertThat(myMethods.duplicateWithHash(stringList), not(hasItems("Superkalafristik")));
     }
 
     @Test
     public void testDuplicateWithHash2(){
         assertEquals(myMethods.duplicateWithHash(stringList2).size(), 0);
+    }
+
+    @Test
+    public void testFrequency() {
+        assertThat(myMethods.frequency(stringList), hasItems("This"));
+        assertThat(myMethods.frequency(stringList), hasItems("because"));
+        assertThat(myMethods.frequency(stringList), not(hasItems("Superkalifristik")));
+
     }
 
 
