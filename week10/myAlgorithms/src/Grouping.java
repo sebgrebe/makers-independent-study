@@ -1,17 +1,20 @@
 import java.util.*;
 
 public class Duplicate {
-  public static void main(String[] args) {
-    String[] names = {"Skaiste", "Ugne", "Ausrine", "Darius", "Iveta", "Asterix", "Edvardas"};
-    int groupNo = 3;
-    ArrayList<String[]> result = randomGroups(names, groupNo);
-    for (int i = 0; i < result.size(); i++) {
-        System.out.println("Group No: " + (i + 1));
-        for (int j = 0; j < result.get(i).length; j++) {
-          System.out.println(result.get(i)[j]);
-        }
-    }
 
+  private String[] names = {"Skaiste", "Ugne", "Ausrine", "Darius", "Iveta", "Asterix", "Edvardas"};
+
+  public Duplicate() {
+      this.names = names;
+  }
+
+  public static void printGroup(ArrayList<String[]> grouped ) {
+    for (int i = 0; i < grouped.size(); i++) {
+      System.out.println("Group No: " + (i + 1));
+      for (int j = 0; j < grouped.get(i).length; j++) {
+        System.out.println(grouped.get(i)[j]);
+      }
+    }
   }
 
   public static ArrayList<String[]> randomGroups(String[] names, int groupNo) {

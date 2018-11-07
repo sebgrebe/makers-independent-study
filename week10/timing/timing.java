@@ -127,6 +127,23 @@ public class Timing {
       return duplicates;
     };
 
+    Function <ArrayList<String>, Object> myDuplicateWithHash = testArrayList -> {
+      Hashtable<String, Integer> words = new Hashtable<String, Integer>();
+      ArrayList<String> duplicates = new ArrayList<String>();
+      for (int i = 0; i < testArrayList.size(); i++) {
+        String word = testArrayList.get(i);
+        if (words.containsKey(word)) {
+          if (words.get(word) == 1) {
+            duplicates.add(word);
+            words.put(word, 2);
+          }
+        } else {
+          words.put(word, 1);
+        }
+      }
+      return duplicates;
+    };
+
     //get time for getting last element of array
 
     // diff = test(arrayList, 1000000, getLast);
@@ -165,8 +182,12 @@ public class Timing {
     // printTestResult(diff, "sort array with my clever method", size);
 
     // get time for myDuplicate
-    diff = testStrings(stringList, rounds, myDuplicate);
-    printTestResult(diff, "find duplicates with my method", size);
+//    diff = testStrings(stringList, rounds, myDuplicate);
+//    printTestResult(diff, "find duplicates with my method", size);
+
+    // get time for myDuplicateWithHash
+    diff = testStrings(stringList, rounds, myDuplicateWithHash);
+    printTestResult(diff, "find duplicates with my hash method", size);
 
   }
 
