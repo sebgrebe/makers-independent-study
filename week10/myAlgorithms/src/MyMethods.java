@@ -4,6 +4,9 @@ public class MyMethods {
 
     public static void main(String[] args) {
 
+        Grouping duplicateInstance = new Grouping();
+        System.out.println(duplicateInstance);
+
         ArrayList<Integer> list_random = new ArrayList<Integer>();
         int list_size = 100;
         for (int i=0; i < list_size; i++) {
@@ -42,7 +45,7 @@ public class MyMethods {
 //        System.out.println(mySorted);
 //        System.out.println(mySorted.size());
 
-        System.out.println(duplicate(stringList));
+            System.out.println(duplicateWithHash(stringList));
 
     }
 
@@ -113,6 +116,24 @@ public class MyMethods {
             }
             else if (!newWords.contains(nextWord)) {
                 newWords.add(nextWord);
+            }
+        }
+        return duplicates;
+    }
+
+    public static ArrayList<String> duplicateWithHash(ArrayList<String> list) {
+        Hashtable<String, Integer> words = new Hashtable<String, Integer>();
+        ArrayList<String> duplicates = new ArrayList<String>();
+        for (int i=0; i < list.size(); i++) {
+            String word = list.get(i);
+            if (words.containsKey(word)) {
+                if (words.get(word) == 1) {
+                    duplicates.add(word);
+                    words.put(word, 2);
+                }
+            }
+            else {
+                words.put(word, 1);
             }
         }
         return duplicates;

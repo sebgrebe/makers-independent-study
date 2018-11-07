@@ -53,4 +53,15 @@ public class myMethodsTest {
         assertEquals(0, myMethods.duplicate(stringList2).size());
     }
 
+    @Test
+    public void testDuplicateWithHash(){
+        assertEquals(myMethods.duplicateWithHash(stringList), duplicates);
+    }
+
+    @Test
+    public void testDuplicateWithHash2(){
+        assertEquals(myMethods.duplicateWithHash(stringList2).size(), 0);
+    }
+
+
 }

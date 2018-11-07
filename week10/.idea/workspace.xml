@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e2c394-c5f4-4642-8146-5400cf607860" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/week10.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/week10.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myAlgorithms/src/Grouping.java" beforeDir="false" afterPath="$PROJECT_DIR$/myAlgorithms/src/Grouping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myAlgorithms/src/MyMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/myAlgorithms/src/MyMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myAlgorithms/test/myMethodsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/myAlgorithms/test/myMethodsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,33 +26,97 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="md" value="1" />
+          <entry key="class" value="1" />
+          <entry key="java" value="5" />
+          <entry key="md" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="5" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="567" />
+          <entry key="dummy" value="8" />
+          <entry key="java" value="1053" />
+          <entry key="md" value="603" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="567" />
+          <entry key="JAVA" value="1053" />
+          <entry key="PLAIN_TEXT" value="611" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myAlgorithms/src/MyMethods.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="138" column="26" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="138" selection-end-column="26" />
+              <folding>
+                <element signature="e#250#259#0" expanded="true" />
+                <element signature="e#491#500#0" expanded="true" />
+                <element signature="e#683#691#0" expanded="true" />
+                <element signature="e#1589#1598#0" expanded="true" />
+                <element signature="e#2713#2722#0" expanded="true" />
+                <element signature="e#3346#3354#0" expanded="true" />
+                <element signature="e#3410#3418#0" expanded="true" />
+                <element signature="e#4018#4035#0" expanded="true" />
+                <element signature="e#4089#4097#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/timing/timing.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="7" column="69" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/timing/timing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2160">
+              <caret line="144" column="6" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="97" selection-start-line="3" selection-start-column="97" selection-end-line="3" selection-end-column="97" />
+            <state relative-caret-position="229">
+              <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myAlgorithms/test/myMethodsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="e#1529#1530#0" expanded="true" />
+                <element signature="e#1601#1602#0" expanded="true" />
+                <element signature="e#1663#1664#0" expanded="true" />
+                <element signature="e#1736#1737#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,6 +129,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/myAlgorithms/src/Duplicate.java" />
+        <option value="$PROJECT_DIR$/myAlgorithms/src/Grouping.java" />
+        <option value="$PROJECT_DIR$/myAlgorithms/src/MyMethods.java" />
+        <option value="$PROJECT_DIR$/myAlgorithms/test/myMethodsTest.java" />
+        <option value="$PROJECT_DIR$/timing/timing.java" />
         <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
@@ -83,6 +158,16 @@
               <item name="week10" type="b2602c69:ProjectViewProjectNode" />
               <item name="week10" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="week10" type="b2602c69:ProjectViewProjectNode" />
+              <item name="week10" type="462c0819:PsiDirectoryNode" />
+              <item name="myAlgorithms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="week10" type="b2602c69:ProjectViewProjectNode" />
+              <item name="week10" type="462c0819:PsiDirectoryNode" />
+              <item name="timing" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -91,7 +176,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541601940587" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -105,6 +197,48 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="JUnit.myMethodsTest.testDuplicateWithHash2">
+    <configuration name="myMethods" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="MyMethods" />
+      <module name="week10" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="myMethodsTest.testDuplicateWithHash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="week10" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="myMethodsTest" />
+      <option name="METHOD_NAME" value="testDuplicateWithHash" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="myMethodsTest.testDuplicateWithHash2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="week10" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="myMethodsTest" />
+      <option name="METHOD_NAME" value="testDuplicateWithHash2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.myMethods" />
+      <item itemvalue="JUnit.myMethodsTest.testDuplicateWithHash" />
+      <item itemvalue="JUnit.myMethodsTest.testDuplicateWithHash2" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.myMethodsTest.testDuplicateWithHash2" />
+        <item itemvalue="JUnit.myMethodsTest.testDuplicateWithHash" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -117,6 +251,20 @@
       <updated>1541594874023</updated>
     </task>
     <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="myMethodsTest_testDuplicateWithHash - 2018.11.07 at 14h 29m 38s.xml">
+      <configuration name="myMethodsTest.testDuplicateWithHash" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myMethodsTest_testDuplicateWithHash - 2018.11.07 at 14h 35m 59s.xml">
+      <configuration name="myMethodsTest.testDuplicateWithHash" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myMethodsTest_testDuplicateWithHash2 - 2018.11.07 at 14h 36m 23s.xml">
+      <configuration name="myMethodsTest.testDuplicateWithHash2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="myMethodsTest_testDuplicateWithHash2 - 2018.11.07 at 14h 36m 59s.xml">
+      <configuration name="myMethodsTest.testDuplicateWithHash2" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="43" width="1260" height="669" extended-state="0" />
@@ -136,10 +284,11 @@
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" weight="0.32943144" />
       <window_info anchor="bottom" id="Console" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32943144" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32943144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -158,19 +307,145 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/myAlgorithms/src/Grouping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myAlgorithms/test/myMethodsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#1529#1530#0" expanded="true" />
+            <element signature="e#1601#1602#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1736#1737#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myAlgorithms/src/MyMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="138" column="26" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="138" selection-end-column="26" />
+          <folding>
+            <element signature="e#250#259#0" expanded="true" />
+            <element signature="e#491#500#0" expanded="true" />
+            <element signature="e#683#691#0" expanded="true" />
+            <element signature="e#1589#1598#0" expanded="true" />
+            <element signature="e#2713#2722#0" expanded="true" />
+            <element signature="e#3346#3354#0" expanded="true" />
+            <element signature="e#3410#3418#0" expanded="true" />
+            <element signature="e#4018#4035#0" expanded="true" />
+            <element signature="e#4089#4097#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timing/timing.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="69" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timing/timing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="144" column="6" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="97" selection-start-line="3" selection-start-column="97" selection-end-line="3" selection-end-column="97" />
+        <state relative-caret-position="229">
+          <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>week10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>junit:junit:4.12</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

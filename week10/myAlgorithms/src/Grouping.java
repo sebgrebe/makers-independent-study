@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class Duplicate {
+public class Grouping {
 
   private String[] names = {"Skaiste", "Ugne", "Ausrine", "Darius", "Iveta", "Asterix", "Edvardas"};
 
-  public Duplicate() {
+  public Grouping() {
       this.names = names;
   }
 
