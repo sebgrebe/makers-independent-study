@@ -57,5 +57,12 @@ public class myMethodsTest {
 
     }
 
+    @Test
+    public void testFrequencyWithHash(){
+        assertThat(myMethods.frequencyWithHash(stringList), hasItems("This"));
+        assertThat(myMethods.frequencyWithHash(stringList), hasItems("because"));
+        assertThat(myMethods.frequencyWithHash(stringList), not(hasItems("Superkalifristik")));
+    }
+
 
 }

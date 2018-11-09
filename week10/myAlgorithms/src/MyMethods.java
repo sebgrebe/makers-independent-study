@@ -131,6 +131,104 @@ public class MyMethods {
         return mostFrequent;
     }
 
+    public static ArrayList<String> frequencyWithHash(ArrayList<String> testArrayList) {
+        ArrayList<String> mostFrequent = new ArrayList<String>();
+        Hashtable<String, Integer> words = new Hashtable<String, Integer>();
+        for (int i = 0; i < testArrayList.size(); i++) {
+            String word = testArrayList.get(i);
+            if (words.containsKey(word)) {
+                words.put(word, words.get(word) + 1);
+            } else {
+                words.put(word, 1);
+            }
+        }
+        Collection frequencies = words.values();
+        Iterator itr = frequencies.iterator();
+        ArrayList<Integer> orderedValues = new ArrayList<Integer>();
+        while (itr.hasNext()) {
+            int j = (int) itr.next();
+            orderedValues.add(j);
+        }
+        Collections.sort(orderedValues);
+        for (int k=orderedValues.size()-1; k >= 0; k--) {
+            int maxValue = orderedValues.get(k);
+            if (k+1 < orderedValues.size()) {
+                if (maxValue == orderedValues.get(k+1)) { continue;}
+            }
+            Enumeration<String> keys = words.keys();
+            while (keys.hasMoreElements()) {
+                String word = keys.nextElement();
+                if (words.get(word) == maxValue) {
+                    mostFrequent.add(word);
+                }
+            }
+            if (mostFrequent.size() == 10) {
+                break;
+            }
+        }
+        return mostFrequent;
+    }
 
+//    public static ArrayList<String> frequencyWithCleverHash(ArrayList<String> testArrayList) {
+//        ArrayList<String> mostFrequent = new ArrayList<String>();
+//        Hashtable<String, Integer> words = new Hashtable<String, Integer>();
+//        Hashtable<Integer, ArrayList<String>> frequenciesHash = new Hashtable<Integer, ArrayList<String>>();
+//        ArrayList<Integer> frequencyList = new ArrayList<Integer>();
+//        for (int i=0; i < testArrayList.size(); i++) {
+//            String word = testArrayList.get(i);
+//            if (words.containsKey(word)) {
+//                int wordFrequency = words.get(word);
+//                words.put(word, wordFrequency + 1);
+//                ArrayList<String> wordsWithFrequency = frequenciesHash.get(wordFrequency + 1);
+//                wordsWithFrequency.add(word);
+//                frequenciesHash.put(wordFrequency + 1, wordsWithFrequency);
+//                frequencyList.add(wordFrequency + 1);
+//            } else {
+//                words.put(word, 1);
+//                ArrayList<String> wordsWithFrequency1 = frequenciesHash.get(1);
+//                if ()
+//                wordsWithFrequency1.add(word);
+//                frequenciesHash.put(1, wordsWithFrequency1);
+//                frequencyList.add(1);
+//            }
+//        }
+//        Collections.sort(frequencyList);
+//        for (int j = frequencyList.size() - 1; j >= 0; j--) {
+//            int maxFrequency = frequencyList.get(j);
+//            if (j != frequencyList.size() - 1) {
+//                if (maxFrequency == frequencyList.get(j + 1)) {
+//                    continue;
+//                }
+//            }
+//            for (int k=0; k < frequenciesHash.get(maxFrequency).size(); k++) {
+//                mostFrequent.add(frequenciesHash.get(maxFrequency).get(k));
+//            }
+//            if (mostFrequent.size() >= 10) {
+//                break;
+//            }
+//        }
+//        return mostFrequent;
+//    }
 
+    public static ArrayList<Integer> quickSort(ArrayList<Integer> arr) {
+        if (arr.size() <= 1) {
+            return arr;
+        }
+        int pivot = arr.get(0);
+        arr.remove(0);
+        ArrayList<Integer> left = new ArrayList<Integer>();
+        ArrayList<Integer> right = new ArrayList<Integer>();
+        for (int i=0; i<arr.size(); i++) {
+            if (arr.get(i) <= pivot) {
+                left.add(arr.get(i));
+            } else {
+                right.add(arr.get(i));
+            }
+        }
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        result.addAll(quickSort(left));
+        result.add(pivot);
+        result.addAll(quickSort(right));
+        return result;
+    }
 }
