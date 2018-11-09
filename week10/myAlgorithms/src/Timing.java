@@ -54,6 +54,9 @@ public class Timing {
     // diff = testInts(arrayList, rounds, myClevererSort);
     // printTestResult(diff, "sort array with my clever method", size);
 
+     diff = testInts(arrayList, rounds, mergeSort);
+     printTestResult(diff, "sort array with merge sort", size);
+
     // diff = testInts(stringList, rounds, myDuplicate);
     // printTestResult(diff, "find duplicates with my method", size);
 
@@ -248,6 +251,41 @@ public class Timing {
         return sorted;
     };
 
+    public static Function <ArrayList<Integer>, ArrayList<Integer>> mergeSort = arr -> {
+        int arr_size = arr.size();
+        int middle = arr_size / 2;
+        ArrayList<Integer> left = new ArrayList<Integer>(arr.subList(0, middle));
+        ArrayList<Integer> right = new ArrayList<Integer>(arr.subList(middle, arr_size));
+        if (left.size() > 1) {
+            left = Timing.mergeSort.apply(left);
+        }
+        if (right.size() > 1) {
+            right = Timing.mergeSort.apply(right);
+        }
+        //merge
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        int j = 0;
+        int k = 0;
+        while(j < left.size() && k < right.size()) {
+            if (left.get(j) < right.get(k)) {
+                result.add(left.get(j));
+                j++;
+            } else {
+                result.add(right.get(k));
+                k++;
+            }
+        }
+        while (j < left.size()) {
+            result.add(left.get(j));
+            j++;
+        }
+        while (k < right.size()) {
+            result.add(right.get(k));
+            k++;
+        }
+        return result;
+    };
+
     //comparing methods for finding duplicates and most frequents using array vs hash
 
     public static Function <ArrayList<String>, ArrayList<String>> myDuplicateWithHash = testArrayList -> {
@@ -345,6 +383,7 @@ public class Timing {
         }
         return mostFrequent;
     };
+
 
 
 

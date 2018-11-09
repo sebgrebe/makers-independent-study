@@ -235,26 +235,35 @@ public class MyMethods {
     public static ArrayList<Integer> mergeSort(ArrayList<Integer> arr) {
         int arr_size = arr.size();
         int middle = arr_size / 2;
-        ArrayList<Integer> left = new ArrayList<Integer>(arr.subList(0, middle-1));
-        ArrayList<Integer> right = new ArrayList<Integer>(arr.subList(middle, arr_size-1));
-        ArrayList<Integer> result = new ArrayList<Integer>(2);
-        if (left.size() == 1 && right.size() == 1) {
-            int leftValue = left.get(0);
-            int rightValue = right.get(0);
-            if (leftValue > rightValue) {
-                result.add(leftValue);
-                result.add(rightValue);
+        ArrayList<Integer> left = new ArrayList<Integer>(arr.subList(0, middle));
+        ArrayList<Integer> right = new ArrayList<Integer>(arr.subList(middle, arr_size));
+        if (left.size() > 1) {
+            left = mergeSort(left);
+        }
+        if (right.size() > 1) {
+            right = mergeSort(right);
+        }
+
+        //merge
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        int j = 0;
+        int k = 0;
+        while(j < left.size() && k < right.size()) {
+            if (left.get(j) < right.get(k)) {
+                result.add(left.get(j));
+                j++;
             } else {
-                result.add(rightValue);
-                result.add(leftValue);
+                result.add(right.get(k));
+                k++;
             }
-        } else {
-            if (left.size() > 1) {
-                mergeSort(left);
-            }
-            else if (right.size() > 1) {
-                mergeSort(right);
-            }
+        }
+        while (j < left.size()) {
+            result.add(left.get(j));
+            j++;
+        }
+        while (k < right.size()) {
+            result.add(right.get(k));
+            k++;
         }
         return result;
     }
