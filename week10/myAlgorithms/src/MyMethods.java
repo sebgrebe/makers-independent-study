@@ -231,4 +231,31 @@ public class MyMethods {
         result.addAll(quickSort(right));
         return result;
     }
+
+    public static ArrayList<Integer> mergeSort(ArrayList<Integer> arr) {
+        int arr_size = arr.size();
+        int middle = arr_size / 2;
+        ArrayList<Integer> left = new ArrayList<Integer>(arr.subList(0, middle-1));
+        ArrayList<Integer> right = new ArrayList<Integer>(arr.subList(middle, arr_size-1));
+        ArrayList<Integer> result = new ArrayList<Integer>(2);
+        if (left.size() == 1 && right.size() == 1) {
+            int leftValue = left.get(0);
+            int rightValue = right.get(0);
+            if (leftValue > rightValue) {
+                result.add(leftValue);
+                result.add(rightValue);
+            } else {
+                result.add(rightValue);
+                result.add(leftValue);
+            }
+        } else {
+            if (left.size() > 1) {
+                mergeSort(left);
+            }
+            else if (right.size() > 1) {
+                mergeSort(right);
+            }
+        }
+        return result;
+    }
 }

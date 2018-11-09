@@ -4,7 +4,7 @@ import java.util.function.*;
 public class Timing {
 
   public static void main(String[] args) {
-      
+
     // pass in the array size that you want to test on the command line
     int size = Integer.parseInt(args[0]);
 
@@ -87,6 +87,20 @@ public class Timing {
     return arrayList;
   }
 
+  //Test functions for different Types
+  public static double testInt(ArrayList testArrayList, int rounds, Function<ArrayList<Integer>, Integer> method) {
+      double endTime = 0;
+      double startTime = System.nanoTime();
+      for (int i = 0; i < rounds; i++) {
+          Object last = method.apply(testArrayList);
+      }
+      endTime = System.nanoTime();
+      System.out.println("start time " + startTime);
+      System.out.println("end time " + endTime);
+      double diff = (endTime - startTime) / rounds ;
+      return diff;
+  }
+
   public static double testInts(ArrayList testArrayList, int rounds, Function<ArrayList<Integer>, ArrayList<Integer>> method) {
     double endTime = 0;
     double startTime = System.nanoTime();
@@ -114,7 +128,7 @@ public class Timing {
   }
 
     //Java standard functions
-    public static Function<ArrayList<Integer>, ArrayList<Integer>> getLast = testArrayList -> {
+    public static Function<ArrayList<Integer>, Integer> getLast = testArrayList -> {
         return testArrayList.get(testArrayList.size() - 1);
     };
 
@@ -253,7 +267,7 @@ public class Timing {
         return duplicates;
     };
 
-    public static Function <ArrayList<String>, <ArrayList<String>> myFrequency = testArrayList -> {
+    public static Function <ArrayList<String>, ArrayList<String>> myFrequency = testArrayList -> {
         ArrayList<ArrayList<String>> groupedList = new ArrayList<ArrayList<String>>();
         for (int i=0; i<testArrayList.size(); i++) {
             String word = testArrayList.get(i);
@@ -292,7 +306,7 @@ public class Timing {
         return mostFrequent;
     };
 
-    public static Function <ArrayList<String>, <ArrayList<String>> myFrequencyWithHash = testArrayList -> {
+    public static Function <ArrayList<String>, ArrayList<String>> myFrequencyWithHash = testArrayList -> {
         ArrayList<String> mostFrequent = new ArrayList<String>();
         Hashtable<String, Integer> words = new Hashtable<String, Integer>();
         for (int i = 0; i < testArrayList.size(); i++) {
