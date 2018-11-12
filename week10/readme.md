@@ -3,8 +3,7 @@
 Folder structure:
 - myAlgorithms/src/Timing: Timing benchmark tests for the methods. Methods are wrapped in lambda functions so that they
   can be passed as arguments to time test.
-- myAlgorithms/src/myMethods: contains all algorithms I have written for this project week.
-- myAlgorithms/test/myMethodsTest: tests for these
+- myAlgorithms/test/TimingTest: test for some of the methods
 
 
 ### Array methods
@@ -15,6 +14,13 @@ Testing four different Array methods:
 * sort
 
 I've compared these with my own methods for reverse, shuffle, and sort.
+
+I wrote sort methods for the:
+* Selection
+* Insertion
+* Quick
+* Merge
+
 
 All tests are done for different array sizes (range: 10 - 1000000).
 Results can be found [here](https://docs.google.com/spreadsheets/d/1M00Ww9iaW-4b57Mz7hGL7ILT1yaOMRixbhGv9CjBdVY/edit#gid=1038009516)
