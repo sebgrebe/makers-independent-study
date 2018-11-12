@@ -45,17 +45,17 @@ public class Timing {
     // diff = testInts(arrayList, rounds, sort);
     // printTestResult(diff, "sort array", size);
 
-    // diff = testInts(arrayList, rounds, mySort);
-    // printTestResult(diff, "sort array with my method", size);
+    // diff = testInts(arrayList, rounds, selectionSort);
+    // printTestResult(diff, "sort array with selection sort method", size);
 
-    // diff = testInts(arrayList, rounds, myCleverSort);
-    // printTestResult(diff, "sort array with my clever method", size);
+    // diff = testInts(arrayList, rounds, insertionSort1);
+    // printTestResult(diff, "sort array with insertion sort method", size);
 
-    // diff = testInts(arrayList, rounds, myClevererSort);
-    // printTestResult(diff, "sort array with my clever method", size);
+    // diff = testInts(arrayList, rounds, insertionSort2);
+    // printTestResult(diff, "sort array with instertion sort method 2", size);
 
-     diff = testInts(arrayList, rounds, mergeSort);
-     printTestResult(diff, "sort array with merge sort", size);
+//     diff = testInts(arrayList, rounds, mergeSort);
+//     printTestResult(diff, "sort array with merge sort", size);
 
     // diff = testInts(stringList, rounds, myDuplicate);
     // printTestResult(diff, "find duplicates with my method", size);
@@ -197,7 +197,7 @@ public class Timing {
     };
 
     //Three different implementations for Selection sort
-    public static Function <ArrayList<Integer>, ArrayList<Integer>> mySort = testArrayList -> {
+    public static Function <ArrayList<Integer>, ArrayList<Integer>> selectionSort = testArrayList -> {
         int list_size = testArrayList.size();
         ArrayList<Integer> sorted = new ArrayList<Integer>();
         for (int i=0; i < list_size; i++) {
@@ -213,7 +213,7 @@ public class Timing {
         return sorted;
     };
 
-    public static Function <ArrayList<Integer>, ArrayList<Integer>> myCleverSort = testArrayList -> {
+    public static Function <ArrayList<Integer>, ArrayList<Integer>> insertionSort1 = testArrayList -> {
         for (int i = 1; i < testArrayList.size(); i++) {
             int comp = testArrayList.get(i);
             for (int j=(i-1); j > -1; j--) {
@@ -232,7 +232,8 @@ public class Timing {
         return testArrayList;
     };
 
-    public static Function <ArrayList<Integer>, ArrayList<Integer>> myClevererSort = testArrayList -> {
+    // Insertion search
+    public static Function <ArrayList<Integer>, ArrayList<Integer>> insertionSort2 = testArrayList -> {
         ArrayList<Integer> sorted = new ArrayList<Integer>();
         sorted.add(testArrayList.get(0));
         for (int i = 1; i < testArrayList.size(); i++) {
